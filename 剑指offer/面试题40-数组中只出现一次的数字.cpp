@@ -20,14 +20,14 @@ void GetAppearOnce(int arr[], int n, int* pNum1, int* pNum2)
     }
     //找出XORresult中为的一位
     int index = 0;
-    while(XORresult & (1 << index) == 0)
+    while((XORresult & (1 << index)) == 0)
     {
        index++;
     }
     //XORresult中第index位是，按照第index位是还是进行分组
     for(int i = 0; i < n; ++i)
     {
-       if(arr[i] & (1 << index) == 1)
+       if(arr[i] & (1 << index))
            (*pNum1) ^= arr[i];
     }
     //
